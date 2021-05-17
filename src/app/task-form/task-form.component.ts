@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { from } from 'rxjs';
+import {Task} from '../task'
 
 @Component({
   selector: 'app-task-form',
@@ -6,6 +8,21 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./task-form.component.css']
 })
 export class TaskFormComponent implements OnInit {
+
+  tasks : Task[] = [];
+
+  addTask(title: HTMLInputElement, category: HTMLInputElement, deadline: HTMLInputElement): boolean{
+    console.log(`${title.value}
+    ${category.value}
+    ${deadline.value}`);
+
+    this.tasks.push(new Task(title.value, category.value, deadline.valueAsDate));
+
+    title.value = "";
+    category.value="";
+    deadline.value=""
+    return false;
+  }
 
   constructor() { }
 
