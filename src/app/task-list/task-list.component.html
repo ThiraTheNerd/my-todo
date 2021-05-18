@@ -1,3 +1,12 @@
-<div>
-  {{task.title}}
+<div class="row">
+  <div appStrikethrough class="col">
+    {{task.title}}
+  </div>
+  <div class="col" >
+    {{task.category}}
+  </div>
+  <div class="col" aria-modal="true">
+    <a (click) = "completeTask(true)"><img src="https://img.icons8.com/emoji/24/000000/check-mark-emoji.png"/></a>
+    <a><img src="https://img.icons8.com/officexs/24/000000/delete-sign.png"/></a>
+  </div>
 </div>

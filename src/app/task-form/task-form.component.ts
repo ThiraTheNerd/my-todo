@@ -24,6 +24,13 @@ export class TaskFormComponent implements OnInit {
     return false;
   }
 
+  taskComplete(isComplete, index){
+    if(isComplete){
+      this.tasks.splice(index,1)
+    }
+
+  }
+
   constructor() { }
 
   ngOnInit() {

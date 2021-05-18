@@ -27,9 +27,12 @@
   </div>
   <div class="col"> 
     <h5>My Tasks</h5>
-    <div class="card" *ngFor = "let task of tasks" id="newtask">
+    <div class="alert alert-warning" role="alert" *ngIf = "tasks.length === 0">
+      yeey! you have no tasks.
+    </div>
+    <div class="card" *ngFor = "let task of tasks; let i = index" id="newtask">
       <div class="card-body">
-        <app-task-list [task] = 'task'></app-task-list>
+        <app-task-list [task] = 'task' (isComplete) = "taskComplete($event, i)"></app-task-list>
       </div>
     </div>
   </div>
