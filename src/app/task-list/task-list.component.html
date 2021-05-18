@@ -3,7 +3,7 @@
     {{task.title}}
   </div>
   <div class="col" >
-    {{task.category}}
+    {{task.deadline | dateCount}}
   </div>
   <div class="col" aria-modal="true">
     <a (click) = "completeTask(true)"><img src="https://img.icons8.com/emoji/24/000000/check-mark-emoji.png"/></a>
